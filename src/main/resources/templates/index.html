@@ -8,14 +8,18 @@
 <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
 </head>
 <body>
+		<div class="container mt-5">
+			<h1>CRUD Personas</h1>
+		</div>
+		
 		<div class="container">
 				<h2 th:if="${list.isEmpty()}"><br>No hay personas</h2>
 				<div th:if="${!list.isEmpty()}">
 					<br>
 					<h2> Personas</h2>
 					<br>
-					<table class="table">
-						<thead>
+					<table class="table table-striped table-hover table-responsive-sm">
+						<thead class="thead-dark">
 							<tr>
 								<th>Nombre</th>
 								<th>Apellido</th>
