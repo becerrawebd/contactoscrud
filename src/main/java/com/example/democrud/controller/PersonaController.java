@@ -27,11 +27,11 @@ public class PersonaController {
 	public String showSave(@PathVariable("id") Long id, Model model) {
 		if(id != null && id != 0) {
 			model.addAttribute("persona", personaServiceAPI.obtener(id));
-			model.addAttribute("accion", "Editar Persona");
+			model.addAttribute("accion", "Editar Contacto");
 		}
 		else {
 			model.addAttribute("persona", new Persona());
-			model.addAttribute("accion", "Añadir Persona");
+			model.addAttribute("accion", "Añadir Contacto");
 		}
 		return "save";
 	}
