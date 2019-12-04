@@ -13,7 +13,7 @@
 				<h1 th:text="*{accion}">Lista de contactos</h1>
 		</div>
 		<div class="container rounded pt-5 pb-5 pl-5 pr-5 bg-white mb-5">
-			<form action="#" th:action="@{/save}" th:object="${persona}" method="post">
+			<form action="#" th:action="@{/save}" th:object="${contacto}" method="post">
 			<div class="form-group">
 				<label for="nombre"> Nombre</label>
 				<input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre" placeholder="Nombre">

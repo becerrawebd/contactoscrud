@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Persona {
+public class Contacto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -19,6 +19,23 @@ public class Persona {
 	private String telefono;
 	@Column
 	private String direccion;
+	@Column
+	private String usuario;
+	
+	public Contacto(Long id, String nombre, String apellido, String telefono, String direccion, String usuario) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.usuario = usuario;
+	}
+	
+	public Contacto() {
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -48,6 +65,12 @@ public class Persona {
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 	
 	
