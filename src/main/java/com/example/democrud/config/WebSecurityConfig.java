@@ -23,8 +23,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-	        .antMatchers(resources).permitAll()  
-	        .antMatchers("/","/index").permitAll()
+	        .antMatchers(resources).permitAll()
+	        .antMatchers("/","/login","/registro","/registrarse").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .permitAll()
                 .defaultSuccessUrl("/contactos")
                 .failureUrl("/login?error=true")
-                .usernameParameter("usuario")
+                .usernameParameter("username")
                 .passwordParameter("password")
                 .and()
             .logout()

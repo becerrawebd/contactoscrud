@@ -26,7 +26,7 @@ public class UsuarioDetailsServiceImpl implements UserDetailsService{
 				.orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
 		List<GrantedAuthority> roles = new ArrayList<>();
 		roles.add(new SimpleGrantedAuthority("ADMIN"));
-		UserDetails userDetails = new User(appUser.getUsuario(), appUser.getPassword(), roles);
+		UserDetails userDetails = new User(appUser.getUsername(), appUser.getPassword(), roles);
 		return userDetails;
 		
 	}

@@ -21,10 +21,12 @@ class DemoCrudApplicationTests {
 	@Test
 	void crearUsuarioTest() {
 		Usuario nuevoUsuario = new Usuario();
-		nuevoUsuario.setUsuario("diego");
-		nuevoUsuario.setPassword(bCrypt.encode("123"));
+		//nuevoUsuario.setUsuario("diego");
+		nuevoUsuario.setUsername("ramon");
+		//nuevoUsuario.setPassword(bCrypt.encode("123"));
+		nuevoUsuario.setPassword(bCrypt.encode("1234"));
 		Usuario retornoUsuario = repo.guardar(nuevoUsuario);
-		assertThat(retornoUsuario.getUsuario().equals(nuevoUsuario.getUsuario()));
+		assertThat(retornoUsuario.getUsername().equals(nuevoUsuario.getUsername()));
 	}
 
 }

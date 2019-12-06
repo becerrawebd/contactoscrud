@@ -7,17 +7,17 @@ import javax.persistence.Id;
 @Entity
 public class Usuario {
 	@Id
-	private String usuario;
+	private String username;
 	
 	@Column
 	private String password;
-
-	public String getUsuario() {
-		return usuario;
+	
+	public String getUsername() {
+		return username;
 	}
 	
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	public String getPassword() {
