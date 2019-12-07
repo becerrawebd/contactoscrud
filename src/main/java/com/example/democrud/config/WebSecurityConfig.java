@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.example.democrud.service.impl.UsuarioDetailsServiceImpl;
+import com.example.democrud.service.impl.UsuarioServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -41,19 +41,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     }
     
     @Autowired
-    private BCryptPasswordEncoder bCrypt;
-    
+    private UsuarioServiceImpl userDetailsService;
+    @Autowired
+    private BCryptPasswordEncoder bcrypt;
+
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-		bCrypt = new BCryptPasswordEncoder(4);
-        return bCrypt;
+    public BCryptPasswordEncoder passwordCryp(){
+        BCryptPasswordEncoder bCrypPassword = new BCryptPasswordEncoder();
+        return bCrypPassword;
     }
-    
-    @Autowired
-    UsuarioDetailsServiceImpl usuarioDetailsServiceImpl;
-	
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-    	auth.userDetailsService(usuarioDetailsServiceImpl).passwordEncoder(bCrypt);
-    }
+
+    protected void configuracion(AuthenticationManagerBuilder auth) 
+        throws  Exception {
+    			auth.userDetailsService(userDetailsService).passwordEncoder(bcrypt);
+        }
 }
