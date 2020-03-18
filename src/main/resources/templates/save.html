@@ -1,43 +1,41 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org" class="h-100">
-<head>
-<meta charset="UTF-8">
-<title>CRUD</title>
+<html xmlns="https://www.thymeleaf.org" style="height:100vh;">
 
-<!-- Bootstrap CSS -->
-<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head> 
-<body class="h-100 d-flex flex-column" style="background-color:#f4f4f4;">
-		<div class=" text-center pt-4 pb-4 mb-5 text-white" style="background-color:#001f3f;">
-				<h1 th:text="*{accion}">Lista de contactos</h1>
+<head th:replace="fragments/layout :: head">
+</head>
+
+<body style="background-color:#f4f4f4; height:100vh; display:flex; flex-direction: column;">
+	<header th:replace="fragments/layout :: header">
+	</header>
+	<main style="flex: 1 0 auto">
+		<div class="container">
+			<h1 th:text="*{accion}"></h1>
 		</div>
-		<div class="container rounded pt-5 pb-5 pl-5 pr-5 bg-white mb-5">
+		<div class="container">
 			<form action="#" th:action="@{/save}" th:object="${contacto}" method="post">
-			<div class="form-group">
-				<label for="nombre"> Nombre</label>
-				<input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre" placeholder="Nombre">
-			</div>
-			<input type="hidden" th:field="*{id}" name="id" id="id">
-			<div class="form-group">	
-				<label for="nombre"> Apellido</label>
-				<input type="text" class="form-control" id="apellido" th:field="*{apellido}" name="apellido" placeholder="Apellido">
-			</div>
-			<div class="form-group">	
-				<label for="nombre"> Direccion</label>
-				<input type="text" class="form-control" id="direccion" th:field="*{direccion}" name="direccion" placeholder="Direccion">
-			</div>
-			<div class="form-group">	
-				<label for="nombre"> Telefono</label>
-				<input type="text" class="form-control" id="telefono" th:field="*{telefono}"  name="telefono" placeholder="Telefono">
-			</div>
-			<button type="submit" class="btn btn-success mt-3">Guardar</button>
+				<div class="input-field">
+					<input type="text" id="nombre" th:field="*{nombre}" name="nombre">
+					<label for="nombre"> Nombre</label>
+				</div>
+				<input type="hidden" th:field="*{id}" name="id" id="id">
+				<div class="input-field">
+					<input type="text" id="apellido" th:field="*{apellido}" name="apellido">
+					<label for="nombre"> Apellido</label>
+				</div>
+				<div class="input-field">
+					<input type="text" class="form-control" id="direccion" th:field="*{direccion}" name="direccion">
+					<label for="nombre"> Direccion</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="telefono" th:field="*{telefono}" name="telefono">
+					<label for="nombre"> Telefono</label>
+				</div>
+				<button type="submit" class="btn">Guardar <i class="material-icons right">check</i> </button>
 			</form>
 		</div>
-		<footer class="footer mt-auto py-2 text-center" style="background-color:#001f3f;">
-				<div class="container">
-					<span class="text-white"><i class="fas fa-code"></i> CRUD realizado en Java con Spring-Framework, Hibernate y PostgreSQL <i class="fas fa-code"></i> Diego Becerra <i class="fas fa-code"></i> becerradiego94@gmail.com <i class="fas fa-code"></i> 2019</span>
-				</div>
-			</footer>
+	</main>
+	<footer tH:replace="fragments/layout :: footer">
+	</footer>
 </body>
+
 </html>

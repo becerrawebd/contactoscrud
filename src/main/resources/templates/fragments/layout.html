@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+<title>CRUD</title>
+<meta charset="UTF-8">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import Google Font - -->
+<link
+	href="https://fonts.googleapis.com/css?family=Josefin+Slab|Maven+Pro|Signika&display=swap"
+	rel="stylesheet">
+<!--font-family: 'Josefin Slab', serif; -->
+<!--font-family: 'Signika', sans-serif; -->
+<!--font-family: 'Maven Pro', sans-serif; -->
+
+<!--Import materialize.css-->
+<!--     <link type="text/css" rel="stylesheet" href="../../static/css/materialize.css" media="screen,projection" /> -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--     <script type="text/javascript" src="../../static/js/materialize.js"></script> -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.modal').modal({
+
+		});
+	});
+</script>
+
+
+</head>
+
+<header th:fragment="header" class="teal darken-3 z-depth-3">
+	<div class="row">
+		<div class="col s12 m4 offset-m8 center-align">
+			<h5 class="white-text" style="font-family: 'Maven Pro', 'sans-serif'">Agenda
+				de contactos</h5>
+		</div>
+	</div>
+</header>
+
+<footer th:fragment="footer" class="page-footer teal darken-3 z-depth-3">
+	<div class="row center-align">
+		<div class="col s12 m6 ">
+			<span style="font-family: 'Josefin Slab', sans"><i
+				class="material-icons tiny">build</i> CRUD realizado con
+				Spring-Framework, Hibernate & Materialize</span>
+		</div>
+		<div class="col s12 m6 ">
+			<span class="fuente-josefine"><i class="material-icons tiny">email</i>
+				becerradiego94@gmail.com</span>
+		</div>
+	</div>
+</footer>
